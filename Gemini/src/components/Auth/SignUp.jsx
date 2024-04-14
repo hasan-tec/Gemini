@@ -5,6 +5,13 @@ import "./SignUp.css";
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { Alert } from 'react-bootstrap'; // Import Alert component from react-bootstrap
 
+const errorMessages = {
+  'auth/invalid-email': 'Please enter a valid email address.',
+  'auth/weak-password': 'Your password must be at least 6 characters long.',
+  'auth/email-already-in-use': 'This email address is already in use. Please sign in instead.',
+  // Add more error messages as needed
+};
+
 const SignUp = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -26,7 +33,7 @@ const SignUp = () => {
             navigate('/HomePage'); // Redirect to homepage after successful sign-in
         } catch (error) {
             console.error('Error creating user:', error.message);
-            setError(error.message); // Set error message
+            setError(errorMessages[error.code] || 'An error occurred. Please try again later.'); // Set error message
         }
     };
 
@@ -42,7 +49,7 @@ const SignUp = () => {
                     <div className="form-box">
                         <label className="SignUp-label" htmlFor="lastName">Last Name:</label>
                         <input type="text" className="SignUp-input" id="lastName" value={lastName} onChange={(e) => setLastName(e.target.value)} />
-                    </div>
+                </div>
                     <div className="form-box">
                         <label className="SignUp-label" htmlFor="email">Email:</label>
                         <input type="email" className="SignUp-input" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -63,4 +70,4 @@ const SignUp = () => {
     );
 }
 
-export default SignUp
+export default SignUp;
