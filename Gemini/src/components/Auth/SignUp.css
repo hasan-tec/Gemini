@@ -1,0 +1,125 @@
+*{
+    justify-content: center;
+}
+
+.SignUp-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #131314;
+}
+
+.SignUp-content {
+    width: 100%;
+    max-width: 400px;
+    background-color: #222;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 3rem 2rem;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.SignUp-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ddd;
+    margin-bottom: 1rem;
+    animation: greetAnimation 1s ease-in-out;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.SignUp-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.SignUp-label {
+    font-size: 1.1rem;
+    color: #ddd;
+    margin-bottom: 0.5rem;
+}
+
+.SignUp-input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #333;
+    color: #ddd;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.SignUp-input:focus {
+    background-color: #444;
+}
+
+.SignUp-button {
+    padding: 0.5rem;
+    font-size: 1.1rem;
+    background-color: rgba(75, 144, 255, 0.4);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: pulse 2s infinite;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.SignUp-button:hover {
+    background-color: rgba(75, 144, 255, 0.6);
+}
+
+.SignUp-link {
+    font-size: 1.1rem;
+    color: rgba(75, 144, 255, 0.4);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.SignUp-link:hover {
+    color: rgba(75, 144, 255, 0.6);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes greetAnimation {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(75, 144, 255, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 85, 70, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 85, 70, 0);
+    }
+}

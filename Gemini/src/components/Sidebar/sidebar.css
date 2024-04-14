@@ -4,9 +4,9 @@
   flex-direction: column;
   min-height: 100vh;
   justify-content: space-between;
-  background-color: #f0f2f5;
+  background-color: #131314;
   padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
 
@@ -17,12 +17,14 @@
 .sidebar img {
   width: 20px;
   height: 20px;
+  filter: invert(1);
 }
 
 /* Sections */
 .top,
 .bottom {
   padding: 20px;
+  color: #ddd;
 }
 
 /* Menu Icon */
@@ -30,7 +32,13 @@
   width: 300px;
   height: 30px;
   margin: 0 13px;
+  transition: transform 0.3s ease;
 }
+
+.menu:hover {
+  transform: scale(1.1);
+}
+
 .new-chat,
 .recent {
   margin-top: 15px;
@@ -42,7 +50,7 @@
   align-items: center;
   gap: 10px;
   padding: 15px 17px;
-  background-color: #e6eaf1;
+  background-color: #1E1F20;
   border-radius: 50px;
   transition: all 0.3s ease;
 }
@@ -50,11 +58,16 @@
 .new-chat img {
   width: 16px;
   height: 20px;
+  transition: transform 0.3s ease;
 }
 
 .new-chat:hover {
-  background-color: #e0e4e8;
+  background-color: #666;
   cursor: pointer;
+}
+
+.new-chat:hover img {
+  transform: rotate(15deg);
 }
 
 /* Recent Chat */
@@ -72,40 +85,84 @@
   margin-bottom: 10px;
   gap: 10px;
   padding: 15px;
-  background-color: #e6eaf1;
+  background-color: #1E1F20;
   border-radius: 50px;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .recent-entry:hover,
 .bottom-item:hover {
-  background-color: #e0e4e8;
-  cursor: pointer;
-}
-
-.sidebar {
-  background-color: #131314;
-  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-}
-
-.sidebar img {
-  filter: invert(1);
-}
-
-.top,
-.bottom {
-  padding: 20px;
-  color: #ddd;
-}
-
-.new-chat,
-.recent-entry,
-.bottom-item {
-  background-color: #1E1F20;
-}
-
-.new-chat:hover,
-.recent-entry:hover,
-.bottom-item:hover {
   background-color: #666;
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+
+/* BlackBox AI CSS */
+
+/* Add a subtle animation to the sidebar when it extends */
+.sidebar.extended {
+  animation: sidebarExtend 0.3s ease-in-out;
+}
+
+
+
+@keyframes menuPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(75, 144, 255, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 85, 70, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 85, 70, 0);
+  }
+}
+
+/* Add a subtle animation to the new chat button */
+.new-chat {
+  animation: newChatAnimation 1s ease-in-out;
+}
+
+@keyframes newChatAnimation {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Add a subtle animation to the recent entries */
+.recent-entry {
+  animation: recentEntryAnimation 1s ease-in-out;
+}
+
+@keyframes recentEntryAnimation {
+  0% {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Add a subtle animation to the bottom items */
+.bottom-item {
+  animation: bottomItemAnimation 1s ease-in-out;
+}
+
+@keyframes bottomItemAnimation {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
