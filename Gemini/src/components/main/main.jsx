@@ -6,7 +6,7 @@ import { Context } from '../../context/context'
 const main = () => {
 
   const {onSent,recentPrompt,showResult,loading,resultData,setInput,input} = useContext(Context)
-
+  
 
 
   return (

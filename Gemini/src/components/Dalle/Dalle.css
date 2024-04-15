@@ -1,0 +1,140 @@
+:root {
+    --main-bg-color: #131314;
+    --accent-color-1: #4b90ff;
+    --accent-color-2: #ff5546;
+    --text-color: #ddd;
+}
+
+.main-image {
+    flex: 1;
+    min-height: 100vh;
+    padding-bottom: 15vh;
+    position: relative;
+}
+
+.nav-image {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    padding: 20px;
+    color: var(--text-color);
+}
+.nav-image p{
+    padding-left: 40px;
+
+}
+
+
+.nav-image img {
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 40px;
+    
+}
+
+.main-container-image {
+    max-width: 900px;   
+    margin: 0 auto;   
+    background-color: var(--main-bg-color);
+}
+
+.greet-image {
+    margin: 50px 0;
+    font-size: 56px;
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 20px;
+    animation: greetAnimation 1s ease-in-out;
+}
+
+.greet-image span {
+    background: -webkit-linear-gradient(16deg, var(--accent-color-1), var(--accent-color-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.loading-image {
+    margin-right: 100px;
+    padding-left: 25px;
+}
+
+.image img{
+    width: 100%;
+    height: auto;
+}
+
+.main-bottom-image {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-width: 900px;
+    padding: 0 20px;
+    margin: auto;
+    background-color: var(--main-bg-color);
+}
+
+.search-box-image {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #1E1F20;
+    padding: 10px 20px;
+    border-radius: 50px;
+    animation: searchBoxPulse 2s infinite;
+    max-width: 800px;
+    margin: 10px auto;
+    margin-left: 520px; /* Add this line */
+}
+
+.search-box-image img {
+    width: 24px;
+    cursor: pointer;
+    filter: invert(1);
+}
+
+.search-box-image input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.search-box-image div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.bottom-info-image {
+    font-size: 13px;
+    margin: 15px  auto;
+    text-align: center;
+    font-weight: 300;
+    color: #aaa;
+}
+
+@media screen and (max-width: 900px) {
+    .main-container-image {
+        max-width: 100%;
+        margin: 0;
+    }
+
+   .loading-image {
+        margin-right: 0;
+        padding-left: 0;
+   }
+
+    .image img{
+        width: 100%;
+        height: auto;
+    }
+
+    .search-box-image{
+        width: 100%;
+    }
+}   

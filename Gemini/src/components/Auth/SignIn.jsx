@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Link, useNavigate } from 'react-router-dom';
 import { auth } from './firebase'; // Import auth from firebase.js
 import "./SignIn.css"
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Alert } from 'react-bootstrap'; // Import Alert component from bootstrap
+import { BrowserRouter as Router, Route, Link, useNavigate } from 'react-router-dom';
 
 const errorMessages = {
   'auth/invalid-email': 'Please enter a valid email address.',
